@@ -1,0 +1,36 @@
+testrajaspringboot.cfapps.io
+
+curl http://testrajaspringboot.cfapps.io/SpringBootRestApi/api/user/
+cf login
+
+raja.muthiah2@cognizant.com
+Mukhil@1
+
+cf push testRajaEurekaService -b java_buildpack
+
+http://test-eureka-service.cfapps.io
+
+cf push testRajaEurekaClient -b java_buildpack
+http://testrajaeurekaclient.cfapps.io
+
+
+--------
+http://localhost:8761/eureka/apps/  - discovery
+http://localhost:9090/api/user         - router
+http://localhost:8888/user               - load balance & circuit breaker
+http://localhost:8888/health
+http://localhost:1111/user               - service 
+http://localhost:2222/user               - service
+
+
+cf push test-eureka-service -b java_buildpack
+
+http://test-eureka-service.cfapps.io/
+test-eureka-service.cfapps.io
+
+cf push test-user-service -b java_buildpack
+https://test-user-service.cfapps.io/user
+
+cf push test-user-lbcb -b java_buildpack
+
+cf push test-zuul-service -b java_buildpack
