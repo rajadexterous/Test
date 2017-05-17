@@ -1,0 +1,4 @@
+applications:
+- name: test-zuul-service
+  memory: 256M
+  path: target/pcf-zuul-route-service-0.0.1-SNAPSHOT.jar

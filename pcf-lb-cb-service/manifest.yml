@@ -1,0 +1,4 @@
+applications:
+- name: test-user-lbcb
+  memory: 400M
+  path: target/pcf-lb-cb-service-0.0.1-SNAPSHOT.jar

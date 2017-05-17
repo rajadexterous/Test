@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: test-user-lbcb
+
+server:
+  port: 8888
+
+eureka:
+   client:
+     serviceUrl:
+        defaultZone: http://test-eureka-service.cfapps.io/eureka/
+        #defaultZone: http://localhost:8761/eureka/
+     registerWithEureka: true
+     fetchRegistry: true
+     
+
+user-service:
+  ribbon:
+    # Eureka vipAddress of the target service
+    #DeploymentContextBasedVipAddresses: testRajaUserServiceLB
+     #listOfServers: localhost:${SERVER.PORT}
+    #NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+     # Interval to refresh the server list from the source (ms)
+    #ServerListRefreshInterval: 15000
+    eureka:
+      enabled: true
+     # client:
+     #   service-url:
+          #defaultZone: http://testrajaeurekaservice.cfapps.io/eureka/
+       #   defaultZone: http://localhost:8761/eureka/
+      #listOfServers: localhost:8090,localhost:9092,localhost:9999
+      #NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+      ServerListRefreshInterval: 15000
+    
